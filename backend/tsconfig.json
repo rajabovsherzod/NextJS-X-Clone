@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                /* Kodingiz kompilyatsiya qilinadigan JavaScript versiyasi */
+    "module": "NodeNext",               /* Modul tizimi (ESM uchun) */
+    "moduleResolution": "NodeNext",     /* Modullarni qanday topish kerakligi */
+    "rootDir": "./src",                 /* Asosiy TypeScript fayllari joylashgan papka */
+    "outDir": "./dist",                 /* Kompilyatsiya qilingan JavaScript fayllari saqlanadigan papka */
+    "esModuleInterop": true,            /* CommonJS va ES modullari o'rtasidagi moslikni ta'minlaydi */
+    "forceConsistentCasingInFileNames": true, /* Fayl nomlarida katta-kichik harflarga e'tiborli bo'lish */
+    "strict": true,                     /* Barcha qat'iy tur tekshiruvlarini yoqadi (juda muhim!) */
+    "skipLibCheck": true                /* Tashqi kutubxonalardagi tiplarni tekshirishni o'tkazib yuborish */
+  },
+  "include": ["src/**/*"],              /* Kompilyatsiya uchun qaysi fayllarni olish kerakligi */
+  "exclude": ["node_modules"]           /* Qaysi papkalarni e'tiborsiz qoldirish */
+}

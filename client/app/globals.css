@@ -156,3 +156,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Hide the default password reveal icon on WebKit/Blink browsers */
+input[type="password"]::-webkit-reveal,
+input[type="password"]::-webkit-clear-button {
+  display: none !important;
+}
+
+/* Hide the default password reveal icon on Edge */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none !important;
+}

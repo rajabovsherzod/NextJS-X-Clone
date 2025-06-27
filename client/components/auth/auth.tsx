@@ -1,8 +1,21 @@
+"use client";
+import { useCallback } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { FaGithub } from "react-icons/fa";
+import useRegisterModal from "@/hooks/useRegisterModal";
+import RegisterModal from "../modals/register-modal";
+
 
 const Auth = () => {
+    const registerModal = useRegisterModal();
+    const onOpenRegisterModal = useCallback(() => {
+        registerModal.onOpen();
+    }, [registerModal]);
+
     return (
+        <>
+        <RegisterModal />
         <main className="flex min-h-screen bg-black text-white items-center justify-center p-4 relative">
             <div className="lg:hidden absolute top-4 left-4">
                 <Image src="/images/x.svg" alt="X Logo" width={30} height={30} />
@@ -27,8 +40,8 @@ const Auth = () => {
                                 Sign up with Google
                             </Button>
                             <Button className="w-full rounded-full flex items-center justify-center bg-white text-black hover:bg-gray-200 font-semibold">
-                                <Image src="/images/apple.svg" alt="Apple Logo" width={20} height={20} className="mr-2" />
-                                Sign up with Apple
+                                <FaGithub className="mr-2" />
+                                Sign up with Github
                             </Button>
                         </div>
 
@@ -39,7 +52,7 @@ const Auth = () => {
                         </div>
 
                         <div className="space-y-4">
-                             <Button className="w-full rounded-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 text-md">
+                             <Button className="w-full rounded-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 text-md" onClick={onOpenRegisterModal}>
                                 Create account
                              </Button>
                              <p className="text-xs text-neutral-500">
@@ -59,6 +72,7 @@ const Auth = () => {
                 </div>
             </div>
         </main>
+        </>
     );
 };
 
